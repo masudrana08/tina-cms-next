@@ -38,3 +38,24 @@ query blogPostQuery($relativePath: String!) {
     }
   }
 }
+query testPostQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  test(relativePath: $relativePath) {
+    ...TestParts
+  }
+}
+
+query testPageQuery {
+  ...LayoutQueryFragment
+  testConnection {
+    edges {
+      node {
+        id
+        _values
+        _sys {
+          filename
+        }
+      }
+    }
+  }
+}

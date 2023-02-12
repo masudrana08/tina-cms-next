@@ -43,6 +43,22 @@ const config = defineConfig({
         },
         fields: [
           {
+            label: "Tags",
+            name: "tags",
+            type: "string",
+            list: true,
+            options: [
+              {
+                value: 'movies',
+                label: 'Movies',
+              },
+              {
+                value: 'music',
+                label: 'Music',
+              },
+            ],
+          },
+          {
             type: "string",
             label: "Title",
             name: "title",
@@ -302,6 +318,7 @@ const config = defineConfig({
           },
         ],
       },
+
       {
         label: "Authors",
         name: "author",
@@ -334,6 +351,7 @@ const config = defineConfig({
             if (document._sys.filename === "about") {
               return `/about`;
             }
+           
             return undefined;
           },
         },
@@ -365,6 +383,29 @@ const config = defineConfig({
           },
         ],
       },
+      {
+        label: "test",
+        name: "test",
+        path: "content/test",
+        format: "mdx",
+        fields: [
+          {
+            type: "string",
+            label: "name",
+            name: "name"
+          },
+          {
+            type: "number",
+            label: "Roll",
+            name: "roll"
+          },
+          {
+            type: "number",
+            label: "Age",
+            name: "age"
+          },
+        ]
+      }
     ],
   },
 });

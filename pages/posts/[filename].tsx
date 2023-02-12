@@ -46,6 +46,7 @@ export const getStaticProps = async ({ params }) => {
  */
 export const getStaticPaths = async () => {
   const postsListData = await client.queries.postConnection();
+  
   return {
     paths: postsListData.data.postConnection.edges.map((post) => ({
       params: { filename: post.node._sys.filename },
